@@ -1,2 +1,2 @@
 <?
-echo "saeeeeed";
+$pdo = new PDO("mysql:host=localhost;dbname=testdb", "root", "password");
