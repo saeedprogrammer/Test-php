@@ -6,8 +6,8 @@ RUN apt-get update && \
     docker-php-ext-install pdo pdo_mysql
 
 # Optional: Configure MySQL to allow root access
-RUN service mysql start && \
-    mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; FLUSH PRIVILEGES;"
+#RUN service mysql start && \
+#    mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; FLUSH PRIVILEGES;"
 
 # Working directory
 WORKDIR /app
