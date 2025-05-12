@@ -9,4 +9,4 @@ COPY . /app
 
 # Command to run PHP CLI
 #CMD ["php", "your_script.php"]
-CMD php -S 0.0.0.0:3000
+#CMD php -S 0.0.0.0:3000
