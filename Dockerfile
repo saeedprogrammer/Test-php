@@ -1,12 +1,20 @@
-# Use the official PHP image from the Docker Hub
-FROM php:8.1-cli
+FROM php:8.2-cli
 
-# Set the working directory inside the container
+# Install MySQL server and PHP MySQL extension
+RUN apt-get update && \
+    apt-get install -y default-mysql-server && \
+    docker-php-ext-install pdo pdo_mysql
+
+# Optional: Configure MySQL to allow root access
+RUN service mysql start && \
+    mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; FLUSH PRIVILEGES;"
+
+# Working directory
 WORKDIR /app
 
-# Copy your PHP files into the container
-COPY . /app
+# Copy your PHP files
+COPY . .
 
-# Command to run PHP CLI
-#CMD ["php", "your_script.php"]
+# Start MySQL and run your PHP script
+CMD service mysql start 
 CMD php -S 0.0.0.0:3000
