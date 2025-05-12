@@ -7,7 +7,7 @@ RUN apt-get update && \
 
 # Optional: Configure MySQL to allow root access
 #RUN service mysql start && \
-#    mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; FLUSH PRIVILEGES;"
+#     mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; FLUSH PRIVILEGES;"
 
 # Working directory
 WORKDIR /app
