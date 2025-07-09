@@ -1,5 +1,6 @@
 FROM php:8.2-cli
 
+
 # Install MySQL server and PHP MySQL extension
 RUN apt-get update && \
     apt-get install -y default-mysql-server && \
